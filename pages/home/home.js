@@ -5,9 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      name:'Coderwhy',
+      age:19,
+      students :[
+        {id:1001, name: 'jack',age:30},
+        {id:1002, name: 'mark',age:29},
+        {id:1003, name: 'mcrk',age:23},
+        {id:1004, name: 'sak',age:21},
+      ],
+      counter:0
   },
-
+  Add(){
+    this.setData({
+      counter:this.data.counter+1
+    })
+  },
+  Sub (){
+     this.setData({
+       counter:this.data.counter-1
+     })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
