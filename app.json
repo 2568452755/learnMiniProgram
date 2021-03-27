@@ -19,14 +19,14 @@
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "assets/tabbar/home.png",
+        "selectedIconPath": "assets/tabbar/home_active.png"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/category/category",
         "text": "分类页面",
-        "iconPath": "",
-        "selectedIconPath": ""
+        "iconPath": "assets/tabbar/category.png",
+        "selectedIconPath": "assets/tabbar/category_active.png"
       }
     ]
   }
