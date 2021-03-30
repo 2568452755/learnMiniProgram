@@ -1,66 +1,67 @@
 // home/home.js
+//getaPP()获取App()产生的实例对象
+// const app = getApp()
+
+// const name = app.globalData.name;
+// const age = app.globalData.age;
+
+//注册一个页面
+//页面也有自己的生命周期函数
 Page({
-
-  /**
-   * 页面的初始数据
-   */
+  // 2.初始化数据
   data: {
-
+    message: '哈哈哈',
+    list: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleGetUserInfo(event){
+    console.log(event)
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  //---------1.监听页面的生命周期函数
+  //页面被加载出来
+  onLoad(){
+    console.log('onLoad')
+    wx.request({
+      url: 'https://gank.io/api/v2/banners',
+      success: (res) =>{
+        console.log(res)
+        const data = res.data.data;
+      
+        this.setData({
+          list: data
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  //页面显示出来时
+  onShow(){
+    console.log('onShow')
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  //页面初次渲染完成时
+  onReady(){
+    console.log('onReady')
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  //当页面隐藏起来时
+  onHide(){
+    console.log('onHide')
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  //页面销毁时
+  onUnload(){
+    console.log('onUnload')
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  // 3.监听wxml中相关的一些事件
+  handleViewClick(){
+    console.log('哈哈哈被点击')
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // 4.监听页面的滚动
+  onPageScroll(obj){
+   // console.log(obj)
+  },
+  //监听页面滚动到底部
+  onReachBottom(){
+    console.log('滚动到底部')
+  },
+  onPullDownRefresh(){
+    console.log('下拉刷新的事件')
   }
+
 })
